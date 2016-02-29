@@ -15,6 +15,7 @@
 		0F166C351C84D89100F86CD8 /* Roman_Numeral_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C341C84D89100F86CD8 /* Roman_Numeral_ConverterTests.swift */; };
 		0F166C401C84D89100F86CD8 /* Roman_Numeral_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C3F1C84D89100F86CD8 /* Roman_Numeral_ConverterUITests.swift */; };
 		0F166C4E1C84DA1800F86CD8 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0F166C4D1C84DA1800F86CD8 /* .travis.yml */; };
+		0F166C521C84DB3200F86CD8 /* RomanNumeralConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0F166C3F1C84D89100F86CD8 /* Roman_Numeral_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roman_Numeral_ConverterUITests.swift; sourceTree = "<group>"; };
 		0F166C411C84D89100F86CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F166C4D1C84DA1800F86CD8 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanNumeralConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				0F166C281C84D89100F86CD8 /* LaunchScreen.storyboard */,
 				0F166C2B1C84D89100F86CD8 /* Info.plist */,
 				0F166C4D1C84DA1800F86CD8 /* .travis.yml */,
+				0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */,
 			);
 			path = "Roman Numeral Converter";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				0F166C221C84D89100F86CD8 /* ViewController.swift in Sources */,
 				0F166C201C84D89100F86CD8 /* AppDelegate.swift in Sources */,
+				0F166C521C84DB3200F86CD8 /* RomanNumeralConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
