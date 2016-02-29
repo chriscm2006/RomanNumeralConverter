@@ -5,9 +5,12 @@ only:
 - master
 
 xcode_project: Roman Numeral Converter.xcodeproj
-xcode_scheme: Roman Numeral Converter
+
+xcode_scheme: RomanNumeralConverterTests
+
 osx_image: beta-xcode6.3
+
 xcode_sdk: iphonesimulator8.3
 
 script:
-- xcodebuild clean build test -project Roman\ Numeral\ Converter.xcodeproj -scheme Roman\ Numeral\ Converter -destination 'platform=iOS Simulator,name=iPhone 5'
+- xcodebuild clean build test -project Roman\ Numeral\ Converter.xcodeproj -scheme RomanNumeralConverterTests -destination 'platform=iOS Simulator,name=iPhone 5'

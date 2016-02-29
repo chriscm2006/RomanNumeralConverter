@@ -19,8 +19,14 @@ class Roman_Numeral_ConverterTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        XCTAssertEqual(0, RomanNumeralConverter.integerFromRomanNumeralString("Any String"));
+    /*
+        Test some of the initial symbols in the table, to make sure our fetching functions work.
+    */
+    func testBasic() {
+        //Test some basic values
+        thereAndBackAgain("I", value: 1)
+        thereAndBackAgain("IV", value: 4)
+        thereAndBackAgain("V", value: 5)
     }
     
     func testPerformanceExample() {
@@ -28,6 +34,16 @@ class Roman_Numeral_ConverterTests: XCTestCase {
         self.measureBlock {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    /*
+    We send a roman numeral and its associated value through a bidirectional test.
+    
+    Return true on success.
+    */
+    func thereAndBackAgain(romanNumeral: String, value:Int) {
+        XCTAssertEqual(romanNumeral, RomanNumeralConverter.romanNumeralFromInteger(value))
+        XCTAssertEqual(value, RomanNumeralConverter.integerFromRomanNumeral(romanNumeral))
     }
     
 }

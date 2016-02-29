@@ -103,12 +103,12 @@
 			children = (
 				0F166C1F1C84D89100F86CD8 /* AppDelegate.swift */,
 				0F166C211C84D89100F86CD8 /* ViewController.swift */,
+				0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */,
 				0F166C231C84D89100F86CD8 /* Main.storyboard */,
 				0F166C261C84D89100F86CD8 /* Assets.xcassets */,
 				0F166C281C84D89100F86CD8 /* LaunchScreen.storyboard */,
 				0F166C2B1C84D89100F86CD8 /* Info.plist */,
 				0F166C4D1C84DA1800F86CD8 /* .travis.yml */,
-				0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */,
 			);
 			path = "Roman Numeral Converter";
 			sourceTree = "<group>";
