@@ -13,4 +13,4 @@ osx_image: beta-xcode7.2
 xcode_sdk: iphonesimulator9.2
 
 script:
-- xcodebuild clean build test -project RomanNumeralConverter.xcodeproj -scheme Roman\ Numeral\ Converter -destination 'platform=iOS Simulator,name=iPhone 5'
+- xcodebuild clean build test -project RomanNumeralConverter.xcodeproj -scheme RomanNumeralConverter -destination 'platform=iOS Simulator,name=iPhone 5'
