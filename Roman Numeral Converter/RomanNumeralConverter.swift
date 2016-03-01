@@ -8,32 +8,53 @@
 
 import Foundation
 
-class RomanNumeralConverter {
+public class RomanNumeralConverter {
     
     //We use a singleton pattern to easily reset state if something gets corrupted.
-    private static let instance = RomanNumeralConverter()
+    private static var instance = RomanNumeralConverter()
     
-    private var _symbolDictionary = [Int: String]()
+    private var _symbolDictionary = [
+        1: "I",
+        4: "IV",
+        5: "V",
+        9: "IX",
+        10: "X",
+        40: "XL",
+        50: "L",
+        90: "XC",
+        100: "C",
+        400: "CD",
+        500: "D",
+        900: "CM",
+        1000: "M"
+    ]
+    
+    private var _sortedBaseValues:[Int]
+    
+    private var _sortedBaseSymbols:[String]
     
     private init() {
-        //By adding IX, IV, etc. values to the table, we make some of the requirements of roman numerals easier!
-        addSymbol("I", value: 1);
-        addSymbol("IV", value: 4);
-        addSymbol("V", value: 5);
-        addSymbol("IX", value: 9);
-        addSymbol("X", value: 10);
-        addSymbol("XL", value: 40);
-        addSymbol("L", value: 50);
+        _sortedBaseValues = _symbolDictionary.keys.sort()
+        
+        _sortedBaseSymbols = [String]()
+        
+        for (value) in _sortedBaseValues {
+            _sortedBaseSymbols.append(_symbolDictionary[value]!)
+        }
     }
     
-    class func integerFromRomanNumeral (romanNumeral: String) -> Int {
+    public class func integerFromRomanNumeral (romanNumeral: String) -> Int {
         
         //By uppercasing the string here, our objects don't have to care!
         return instance.getIntegerValue(romanNumeral.uppercaseString)
     }
     
-    class func romanNumeralFromInteger (value: Int) -> String {
+    public class func romanNumeralFromInteger (value: Int) -> String {
         return instance.getRomanNumeral(value)
+    }
+    
+    class func resetCache() {
+        instance = RomanNumeralConverter()
     }
     
     /*Add a new symbol to the dictionary.  Returns true if the symbol was added.
@@ -42,7 +63,7 @@ class RomanNumeralConverter {
     */
     private func addSymbol(symbol:String, value:Int) -> Bool {
         
-        if (_symbolDictionary.keys.contains(16)) {
+        if (_symbolDictionary.keys.contains(value)) {
             return false;
         }
         
@@ -62,11 +83,14 @@ class RomanNumeralConverter {
             return "";
         }
         
-        let sortedKeys = _symbolDictionary.keys.sort()
-        
-        for (key) in sortedKeys.reverse() {
+        for (key) in _sortedBaseValues.reverse() {
             if (key <= value) {
-                return _symbolDictionary[key]! + getRomanNumeral(value - key)
+                let result = _symbolDictionary[key]! + getRomanNumeral(value - key)
+                
+                //As we unwind the stack, add the new keys we've found to the dictionary
+                addSymbol(result, value: value)
+                
+                return result
             }
         }
         
@@ -78,6 +102,14 @@ class RomanNumeralConverter {
         if (isRomanNumeralInTable(romanNumeral)) {
             let keys = (_symbolDictionary as NSDictionary).allKeysForObject(romanNumeral) as! [Int]
             return keys[0];
+        }
+        
+        for (symbol) in _sortedBaseSymbols.reverse() {
+            if (romanNumeral.hasPrefix(symbol)) {
+                let restOfRomanNumeral = romanNumeral.substringFromIndex(symbol.endIndex)
+                
+                return getIntegerValue(symbol) + getIntegerValue(restOfRomanNumeral)
+            }
         }
         
         return 0;

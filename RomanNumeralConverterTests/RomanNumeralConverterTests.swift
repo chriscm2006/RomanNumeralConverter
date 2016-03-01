@@ -32,11 +32,21 @@ class RomanNumeralConverterTests: XCTestCase {
         40: "XL",
         43: "XLIII",
         44: "XLIV",
-        50: "L"
+        50: "L",
+        99: "XCIX",
+        100: "C",
+        500:"D",
+        533:"DXXXIII",
+        534:"DXXXIV",
+        890: "DCCCXC",
+        900:"CM",
+        1800: "MDCCC"
     ]
     
     override func setUp() {
         super.setUp()
+        
+        RomanNumeralConverter.resetCache()
     }
     
     override func tearDown() {
@@ -55,25 +65,48 @@ class RomanNumeralConverterTests: XCTestCase {
         thereAndBackAgain(_correctDictionary[10]!, value: 10)
         thereAndBackAgain(_correctDictionary[9]!, value: 9)
         thereAndBackAgain(_correctDictionary[50]!, value: 50)
+        thereAndBackAgain(_correctDictionary[500]!, value: 500)
+        thereAndBackAgain(_correctDictionary[900]!, value: 900)
     }
     
     //Test all values in the dictionary converting it to a roman numeral.
-    func testRomanNumeralFromInteger() {
-        for (key) in _correctDictionary.keys {
+    func testRomanNumeralsFromIntegers() {
+        
+        RomanNumeralConverter.resetCache()
+        
+        //Sort the keys, so that the tests run predictably
+        for (key) in _correctDictionary.keys.sort() {
             XCTAssertEqual(_correctDictionary[key], RomanNumeralConverter.romanNumeralFromInteger(key))
         }
     }
     
     func testIntegerFromRomanNumeral() {
-        for (key) in _correctDictionary.keys {
+                
+        for (key) in _correctDictionary.keys.sort() {
             XCTAssertEqual(key, RomanNumeralConverter.integerFromRomanNumeral(_correctDictionary[key]!))
         }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    let PERFORMANCE_MAX_VALUE = 1000
+
+    func testPerformanceIntegerFromRomanNumeral() {
+        
         self.measureBlock {
-            // Put the code you want to measure the time of here.
+            RomanNumeralConverter.resetCache()
+            
+            self.fetchAllRomanNumeralsUpTo(self.PERFORMANCE_MAX_VALUE)
+        }
+    }
+    
+    
+    func testPerformanceIntegerFromRomanNumeral_caching() {
+        
+        self.fetchAllRomanNumeralsUpTo(PERFORMANCE_MAX_VALUE)
+        
+        //After asking for each value, they should be in the cache, so requesting them the other way around should run
+        //very quickly.
+        self.measureBlock {
+            self.fetchAllRomanNumeralsUpTo(self.PERFORMANCE_MAX_VALUE)
         }
     }
     
@@ -85,6 +118,12 @@ class RomanNumeralConverterTests: XCTestCase {
     func thereAndBackAgain(romanNumeral: String, value:Int) {
         XCTAssertEqual(romanNumeral, RomanNumeralConverter.romanNumeralFromInteger(value))
         XCTAssertEqual(value, RomanNumeralConverter.integerFromRomanNumeral(romanNumeral))
+    }
+    
+    func fetchAllRomanNumeralsUpTo(value: Int) {
+        for i in 1...value {
+            RomanNumeralConverter.romanNumeralFromInteger(i)
+        }
     }
     
 }
