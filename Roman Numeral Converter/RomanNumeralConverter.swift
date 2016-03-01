@@ -16,12 +16,14 @@ class RomanNumeralConverter {
     private var _symbolDictionary = [Int: String]()
     
     private init() {
-        //By adding IX, IV, etc. values to the table, we make some of the requirements of easier!
+        //By adding IX, IV, etc. values to the table, we make some of the requirements of roman numerals easier!
         addSymbol("I", value: 1);
         addSymbol("IV", value: 4);
         addSymbol("V", value: 5);
         addSymbol("IX", value: 9);
         addSymbol("X", value: 10);
+        addSymbol("XL", value: 40);
+        addSymbol("L", value: 50);
     }
     
     class func integerFromRomanNumeral (romanNumeral: String) -> Int {

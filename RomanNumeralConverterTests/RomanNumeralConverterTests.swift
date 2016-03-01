@@ -11,6 +11,30 @@ import XCTest
 
 class RomanNumeralConverterTests: XCTestCase {
     
+    //A collection of any correct symbols we believe may be useful for testing.  Comprising most of the 
+    //first 20 or so symbols, and a few of the more complex ones (border cases).
+    let _correctDictionary = [
+        1: "I",
+        2: "II",
+        3: "III",
+        4: "IV",
+        5: "V",
+        6: "VI",
+        7: "VII",
+        8: "VIII",
+        9: "IX",
+        10: "X",
+        13: "XIII",
+        14: "XIV",
+        18: "XVIII",
+        19: "XIX",
+        20: "XX",
+        40: "XL",
+        43: "XLIII",
+        44: "XLIV",
+        50: "L"
+    ]
+    
     override func setUp() {
         super.setUp()
     }
@@ -25,14 +49,25 @@ class RomanNumeralConverterTests: XCTestCase {
     have initialized properly and that our getters and setters are working.
     */
     func testInitialization() {
-        thereAndBackAgain("I", value: 1)
-        thereAndBackAgain("IV", value: 4)
-        thereAndBackAgain("V", value: 5)
+        thereAndBackAgain(_correctDictionary[1]!, value: 1)
+        thereAndBackAgain(_correctDictionary[4]!, value: 4)
+        thereAndBackAgain(_correctDictionary[5]!, value: 5)
+        thereAndBackAgain(_correctDictionary[10]!, value: 10)
+        thereAndBackAgain(_correctDictionary[9]!, value: 9)
+        thereAndBackAgain(_correctDictionary[50]!, value: 50)
     }
     
-    func testRomanNumeralFromInteger_SmallValues() {
-        XCTAssertEqual("VII", RomanNumeralConverter.romanNumeralFromInteger(7))
-        XCTAssertEqual("VIII", RomanNumeralConverter.romanNumeralFromInteger(8))
+    //Test all values in the dictionary converting it to a roman numeral.
+    func testRomanNumeralFromInteger() {
+        for (key) in _correctDictionary.keys {
+            XCTAssertEqual(_correctDictionary[key], RomanNumeralConverter.romanNumeralFromInteger(key))
+        }
+    }
+    
+    func testIntegerFromRomanNumeral() {
+        for (key) in _correctDictionary.keys {
+            XCTAssertEqual(key, RomanNumeralConverter.integerFromRomanNumeral(_correctDictionary[key]!))
+        }
     }
     
     func testPerformanceExample() {
