@@ -33,6 +33,10 @@ public class RomanNumeralConverter {
     
     private var _sortedBaseSymbols:[String]
     
+    private let _repeatableSymbols = ["I", "X", "C", "M"]
+    
+    private let MAX_REPEATS = 3
+    
     private init() {
         _sortedBaseValues = _symbolDictionary.keys.sort()
         
@@ -43,10 +47,27 @@ public class RomanNumeralConverter {
         }
     }
     
-    public class func integerFromRomanNumeral (romanNumeral: String) -> Int {
+    enum RomanNumeralError: ErrorType {
+        case InvalidRomanNumeral
+    }
+    
+    public class func integerFromRomanNumeral (romanNumeral: String) throws -> Int {
         
         //By uppercasing the string here, our objects don't have to care!
-        return instance.getIntegerValue(romanNumeral.uppercaseString)
+        let result = instance.getIntegerValue(romanNumeral.uppercaseString)
+        
+        //Super hacky error handling.  My solution for repeating symbols being adding extra
+        //symbols to the table ("IV", XC" etc) makes error handling tricker.  So instead, I just
+        //check the reverse process, and make sure that the result is the same as the value input.
+        //This may actually be fairly performant given how fast my iterative algorithm is for
+        //calculating proper roman numerals.
+        let correctRomanNumeral = instance.getRomanNumeral(result)
+        
+        if (correctRomanNumeral.compare(romanNumeral) == NSComparisonResult.OrderedSame) {
+            return result
+        } else {
+            throw RomanNumeralError.InvalidRomanNumeral
+        }
     }
     
     public class func romanNumeralFromInteger (value: Int) -> String {
@@ -75,27 +96,31 @@ public class RomanNumeralConverter {
     
     
     private func getRomanNumeral(value: Int) -> String {
-        if (isRomanNumeralInTable(value)) {
-            return _symbolDictionary[value]!
-        }
         
-        if (value == 0) {
-            return "";
-        }
+        var result = ""
         
+        var remainingValue = value
         for (key) in _sortedBaseValues.reverse() {
-            if (key <= value) {
-                let result = _symbolDictionary[key]! + getRomanNumeral(value - key)
-                
-                //As we unwind the stack, add the new keys we've found to the dictionary
-                addSymbol(result, value: value)
-                
-                return result
+            if (key <= remainingValue) {
+
+                let symbol = _symbolDictionary[key]!
+
+                if (_repeatableSymbols.contains(symbol)) {
+                    for _ in 1...MAX_REPEATS {
+                        if (key <= remainingValue) {
+                            result += symbol
+                            remainingValue -= key
+                        }
+                    }
+                } else {
+                    result += symbol
+                    remainingValue -= key
+                }
             }
         }
         
         //TODO: Probably throw an exception if we make it this far.
-        return "";
+        return result;
     }
     
     private func getIntegerValue(romanNumeral: String) -> Int {
@@ -108,7 +133,11 @@ public class RomanNumeralConverter {
             if (romanNumeral.hasPrefix(symbol)) {
                 let restOfRomanNumeral = romanNumeral.substringFromIndex(symbol.endIndex)
                 
-                return getIntegerValue(symbol) + getIntegerValue(restOfRomanNumeral)
+                
+                let symbolValue = getIntegerValue(symbol)
+                let theRestValue = getIntegerValue(restOfRomanNumeral)
+                
+                return theRestValue + symbolValue;
             }
         }
         

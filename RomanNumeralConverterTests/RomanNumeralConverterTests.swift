@@ -69,6 +69,16 @@ class RomanNumeralConverterTests: XCTestCase {
         thereAndBackAgain(_correctDictionary[900]!, value: 900)
     }
     
+    func getIntegerFromNumeralIgnoreThrow(value: String) -> Int {
+        do {
+            return try RomanNumeralConverter.integerFromRomanNumeral(value)
+        } catch {
+            XCTFail("It should not throw an error in these tests")
+        }
+        
+        return 0
+    }
+    
     //Test all values in the dictionary converting it to a roman numeral.
     func testRomanNumeralsFromIntegers() {
         
@@ -83,7 +93,7 @@ class RomanNumeralConverterTests: XCTestCase {
     func testIntegerFromRomanNumeral() {
                 
         for (key) in _correctDictionary.keys.sort() {
-            XCTAssertEqual(key, RomanNumeralConverter.integerFromRomanNumeral(_correctDictionary[key]!))
+            XCTAssertEqual(key, getIntegerFromNumeralIgnoreThrow(_correctDictionary[key]!))
         }
     }
     
@@ -110,6 +120,16 @@ class RomanNumeralConverterTests: XCTestCase {
         }
     }
     
+    func testRomanNumeralsWithErrors() {
+        XCTAssertTrue(XCTAssertThrows {
+            try RomanNumeralConverter.integerFromRomanNumeral("CCCC")
+        })
+        
+        XCTAssertTrue(XCTAssertThrows {
+            try RomanNumeralConverter.integerFromRomanNumeral("IM")
+        })
+    }
+    
     /*
     We send a roman numeral and its associated value through a bidirectional test.
     
@@ -117,12 +137,23 @@ class RomanNumeralConverterTests: XCTestCase {
     */
     func thereAndBackAgain(romanNumeral: String, value:Int) {
         XCTAssertEqual(romanNumeral, RomanNumeralConverter.romanNumeralFromInteger(value))
-        XCTAssertEqual(value, RomanNumeralConverter.integerFromRomanNumeral(romanNumeral))
+        
+        XCTAssertEqual(value, getIntegerFromNumeralIgnoreThrow(romanNumeral))
     }
     
     func fetchAllRomanNumeralsUpTo(value: Int) {
         for i in 1...value {
             RomanNumeralConverter.romanNumeralFromInteger(i)
+        }
+    }
+    
+    func XCTAssertThrows(block: () throws -> ()) -> Bool {
+        do {
+            try block()
+            return false
+        }
+        catch {
+            return true
         }
     }
     
