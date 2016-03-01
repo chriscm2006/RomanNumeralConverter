@@ -6,7 +6,7 @@ only:
 
 xcode_project: RomanNumeralConverter.xcodeproj
 
-xcode_scheme: RomanNumeralConverterTests
+xcode_scheme: RomanNumeralConverter
 
 osx_image: beta-xcode7.2
 
