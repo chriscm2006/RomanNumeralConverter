@@ -9,7 +9,7 @@
 import Foundation
 
 public class RomanNumeralConverter {
-    
+        
     //We use a singleton pattern to easily reset state if something gets corrupted.
     private static var instance = RomanNumeralConverter()
     
@@ -31,6 +31,9 @@ public class RomanNumeralConverter {
         1000: "M"
     ]
     
+    //Given the specs criteria the maximum Roman Numeral is:
+    private static let MAX_ROMAN_NUMERAL = 3888
+    
     private var _sortedBaseValues:[Int]
     
     private var _sortedBaseSymbols:[String]
@@ -49,8 +52,10 @@ public class RomanNumeralConverter {
         }
     }
     
-    enum RomanNumeralError: ErrorType {
+    public enum RomanNumeralError: ErrorType {
         case InvalidRomanNumeral
+        case ValueTooLarge
+        case NonZeroOrNegative
     }
     
     public class func integerFromRomanNumeral (romanNumeral: String) throws -> Int {
@@ -72,7 +77,15 @@ public class RomanNumeralConverter {
         }
     }
     
-    public class func romanNumeralFromInteger (value: Int) -> String {
+    public class func romanNumeralFromInteger (value: Int) throws -> String {
+        if (value < 1) {
+            throw RomanNumeralError.NonZeroOrNegative
+        }
+        
+        if (value > MAX_ROMAN_NUMERAL) {
+            throw RomanNumeralError.ValueTooLarge
+        }
+        
         return instance.getRomanNumeral(value)
     }
     

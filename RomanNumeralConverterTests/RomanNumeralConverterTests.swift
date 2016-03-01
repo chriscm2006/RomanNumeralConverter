@@ -42,8 +42,12 @@ class RomanNumeralConverterTests: XCTestCase {
         890: "DCCCXC",
         900:"CM",
         1000: "M",
-        1800: "MDCCC"
+        1800: "MDCCC",
+        3888: "MMMDCCCLXXXVIII"
     ]
+    
+    let PERFORMANCE_MAX_VALUE = 3888
+
     
     override func setUp() {
         super.setUp()
@@ -73,16 +77,6 @@ class RomanNumeralConverterTests: XCTestCase {
         thereAndBackAgain(_correctDictionary[1000]!, value: 1000)
     }
     
-    func getIntegerFromNumeralIgnoreThrow(value: String) -> Int {
-        do {
-            return try RomanNumeralConverter.integerFromRomanNumeral(value)
-        } catch {
-            XCTFail("It should not throw an error in these tests")
-        }
-        
-        return 0
-    }
-    
     //Test all values in the dictionary converting it to a roman numeral.
     func testRomanNumeralsFromIntegers() {
         
@@ -90,19 +84,17 @@ class RomanNumeralConverterTests: XCTestCase {
         
         //Sort the keys, so that the tests run predictably
         for (key) in _correctDictionary.keys.sort() {
-            XCTAssertEqual(_correctDictionary[key], RomanNumeralConverter.romanNumeralFromInteger(key))
+            XCTAssertEqual(_correctDictionary[key], try! RomanNumeralConverter.romanNumeralFromInteger(key))
         }
     }
     
     func testIntegerFromRomanNumeral() {
                 
         for (key) in _correctDictionary.keys.sort() {
-            XCTAssertEqual(key, getIntegerFromNumeralIgnoreThrow(_correctDictionary[key]!))
+            XCTAssertEqual(key, try! RomanNumeralConverter.integerFromRomanNumeral(_correctDictionary[key]!))
         }
     }
     
-    let PERFORMANCE_MAX_VALUE = 1000
-
     func testPerformanceIntegerFromRomanNumeral() {
         
         self.measureBlock {
@@ -132,6 +124,10 @@ class RomanNumeralConverterTests: XCTestCase {
         XCTAssertTrue(XCTAssertThrows {
             try RomanNumeralConverter.integerFromRomanNumeral("IM")
         })
+        
+        XCTAssertTrue(XCTAssertThrows {
+            try RomanNumeralConverter.integerFromRomanNumeral("IIX")
+        })
     }
     
     /*
@@ -140,14 +136,14 @@ class RomanNumeralConverterTests: XCTestCase {
     Return true on success.
     */
     func thereAndBackAgain(romanNumeral: String, value:Int) {
-        XCTAssertEqual(romanNumeral, RomanNumeralConverter.romanNumeralFromInteger(value))
+        XCTAssertEqual(romanNumeral, try! RomanNumeralConverter.romanNumeralFromInteger(value))
         
-        XCTAssertEqual(value, getIntegerFromNumeralIgnoreThrow(romanNumeral))
+        XCTAssertEqual(value, try! RomanNumeralConverter.integerFromRomanNumeral(romanNumeral))
     }
     
     func fetchAllRomanNumeralsUpTo(value: Int) {
         for i in 1...value {
-            RomanNumeralConverter.romanNumeralFromInteger(i)
+            try! RomanNumeralConverter.romanNumeralFromInteger(i)
         }
     }
     

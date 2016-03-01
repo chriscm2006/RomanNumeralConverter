@@ -16,6 +16,8 @@
 		0F166C521C84DB3200F86CD8 /* RomanNumeralConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */; };
 		0F166C771C85066200F86CD8 /* RomanNumeralConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C761C85066200F86CD8 /* RomanNumeralConverterUITests.swift */; };
 		0F166C851C85442E00F86CD8 /* RomanNumeralConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C841C85442E00F86CD8 /* RomanNumeralConverterTests.swift */; };
+		0F166C8D1C86214D00F86CD8 /* UIStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C8C1C86214D00F86CD8 /* UIStrings.swift */; };
+		0F166C8E1C86217400F86CD8 /* UIStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C8C1C86214D00F86CD8 /* UIStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		0F166C821C85442E00F86CD8 /* RomanNumeralConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RomanNumeralConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F166C841C85442E00F86CD8 /* RomanNumeralConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanNumeralConverterTests.swift; sourceTree = "<group>"; };
 		0F166C861C85442E00F86CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F166C8C1C86214D00F86CD8 /* UIStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 				0F166C1F1C84D89100F86CD8 /* AppDelegate.swift */,
 				0F166C211C84D89100F86CD8 /* ViewController.swift */,
 				0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */,
+				0F166C8C1C86214D00F86CD8 /* UIStrings.swift */,
 				0F166C231C84D89100F86CD8 /* Main.storyboard */,
 				0F166C261C84D89100F86CD8 /* Assets.xcassets */,
 				0F166C281C84D89100F86CD8 /* LaunchScreen.storyboard */,
@@ -266,6 +270,7 @@
 			files = (
 				0F166C221C84D89100F86CD8 /* ViewController.swift in Sources */,
 				0F166C201C84D89100F86CD8 /* AppDelegate.swift in Sources */,
+				0F166C8D1C86214D00F86CD8 /* UIStrings.swift in Sources */,
 				0F166C521C84DB3200F86CD8 /* RomanNumeralConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F166C8E1C86217400F86CD8 /* UIStrings.swift in Sources */,
 				0F166C771C85066200F86CD8 /* RomanNumeralConverterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +499,7 @@
 				0F166C461C84D89100F86CD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F166C7B1C85066200F86CD8 /* Build configuration list for PBXNativeTarget "RomanNumeralConverterUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +508,7 @@
 				0F166C7D1C85066200F86CD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F166C891C85442E00F86CD8 /* Build configuration list for PBXNativeTarget "RomanNumeralConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +517,7 @@
 				0F166C8B1C85442E00F86CD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
