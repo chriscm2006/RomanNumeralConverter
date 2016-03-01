@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0F166C811C85442E00F86CD8"
-               BuildableName = "RomanNumeralConverterTests.xctest"
-               BlueprintName = "RomanNumeralConverterTests"
+               BlueprintIdentifier = "0F166C731C85066200F86CD8"
+               BuildableName = "RomanNumeralConverterUITests.xctest"
+               BlueprintName = "RomanNumeralConverterUITests"
                ReferencedContainer = "container:RomanNumeralConverter.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0F166C731C85066200F86CD8"
-               BuildableName = "RomanNumeralConverterUITests.xctest"
-               BlueprintName = "RomanNumeralConverterUITests"
+               BlueprintIdentifier = "0F166C811C85442E00F86CD8"
+               BuildableName = "RomanNumeralConverterTests.xctest"
+               BlueprintName = "RomanNumeralConverterTests"
                ReferencedContainer = "container:RomanNumeralConverter.xcodeproj">
             </BuildableReference>
          </TestableReference>
