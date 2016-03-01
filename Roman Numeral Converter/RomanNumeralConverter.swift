@@ -16,6 +16,7 @@ class RomanNumeralConverter {
     private var _symbolDictionary = [Int: String]()
     
     private init() {
+        //By adding IX, IV, etc. values to the table, we make some of the requirements of easier!
         addSymbol("I", value: 1);
         addSymbol("IV", value: 4);
         addSymbol("V", value: 5);
@@ -24,7 +25,9 @@ class RomanNumeralConverter {
     }
     
     class func integerFromRomanNumeral (romanNumeral: String) -> Int {
-        return instance.getIntegerValue(romanNumeral);
+        
+        //By uppercasing the string here, our objects don't have to care!
+        return instance.getIntegerValue(romanNumeral.uppercaseString)
     }
     
     class func romanNumeralFromInteger (value: Int) -> String {
@@ -41,7 +44,8 @@ class RomanNumeralConverter {
             return false;
         }
         
-        _symbolDictionary[value] = symbol;
+        //We shouldn't have to upper case, bust since this is adding new symbols we do just in case.
+        _symbolDictionary[value] = symbol.uppercaseString;
         
         return true;
     }
@@ -52,6 +56,19 @@ class RomanNumeralConverter {
             return _symbolDictionary[value]!
         }
         
+        if (value == 0) {
+            return "";
+        }
+        
+        let sortedKeys = _symbolDictionary.keys.sort()
+        
+        for (key) in sortedKeys.reverse() {
+            if (key <= value) {
+                return _symbolDictionary[key]! + getRomanNumeral(value - key)
+            }
+        }
+        
+        //TODO: Probably throw an exception if we make it this far.
         return "";
     }
     

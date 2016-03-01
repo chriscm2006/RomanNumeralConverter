@@ -12,45 +12,45 @@
 		0F166C251C84D89100F86CD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F166C231C84D89100F86CD8 /* Main.storyboard */; };
 		0F166C271C84D89100F86CD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F166C261C84D89100F86CD8 /* Assets.xcassets */; };
 		0F166C2A1C84D89100F86CD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F166C281C84D89100F86CD8 /* LaunchScreen.storyboard */; };
-		0F166C351C84D89100F86CD8 /* Roman_Numeral_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C341C84D89100F86CD8 /* Roman_Numeral_ConverterTests.swift */; };
-		0F166C401C84D89100F86CD8 /* Roman_Numeral_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C3F1C84D89100F86CD8 /* Roman_Numeral_ConverterUITests.swift */; };
 		0F166C4E1C84DA1800F86CD8 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0F166C4D1C84DA1800F86CD8 /* .travis.yml */; };
 		0F166C521C84DB3200F86CD8 /* RomanNumeralConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */; };
+		0F166C771C85066200F86CD8 /* RomanNumeralConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C761C85066200F86CD8 /* RomanNumeralConverterUITests.swift */; };
+		0F166C851C85442E00F86CD8 /* RomanNumeralConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F166C841C85442E00F86CD8 /* RomanNumeralConverterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0F166C311C84D89100F86CD8 /* PBXContainerItemProxy */ = {
+		0F166C791C85066200F86CD8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0F166C141C84D89100F86CD8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0F166C1B1C84D89100F86CD8;
-			remoteInfo = "Roman Numeral Converter";
+			remoteInfo = RomanNumeralConverter;
 		};
-		0F166C3C1C84D89100F86CD8 /* PBXContainerItemProxy */ = {
+		0F166C871C85442E00F86CD8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0F166C141C84D89100F86CD8 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0F166C1B1C84D89100F86CD8;
-			remoteInfo = "Roman Numeral Converter";
+			remoteInfo = RomanNumeralConverter;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F166C1C1C84D89100F86CD8 /* Roman Numeral Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roman Numeral Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F166C1C1C84D89100F86CD8 /* RomanNumeralConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RomanNumeralConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F166C1F1C84D89100F86CD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F166C211C84D89100F86CD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F166C241C84D89100F86CD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F166C261C84D89100F86CD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F166C291C84D89100F86CD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F166C2B1C84D89100F86CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F166C301C84D89100F86CD8 /* Roman Numeral ConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roman Numeral ConverterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F166C341C84D89100F86CD8 /* Roman_Numeral_ConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roman_Numeral_ConverterTests.swift; sourceTree = "<group>"; };
-		0F166C361C84D89100F86CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F166C3B1C84D89100F86CD8 /* Roman Numeral ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roman Numeral ConverterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F166C3F1C84D89100F86CD8 /* Roman_Numeral_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roman_Numeral_ConverterUITests.swift; sourceTree = "<group>"; };
-		0F166C411C84D89100F86CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F166C4D1C84DA1800F86CD8 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		0F166C511C84DB3200F86CD8 /* RomanNumeralConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanNumeralConverter.swift; sourceTree = "<group>"; };
+		0F166C741C85066200F86CD8 /* RomanNumeralConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RomanNumeralConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F166C761C85066200F86CD8 /* RomanNumeralConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanNumeralConverterUITests.swift; sourceTree = "<group>"; };
+		0F166C781C85066200F86CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F166C821C85442E00F86CD8 /* RomanNumeralConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RomanNumeralConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F166C841C85442E00F86CD8 /* RomanNumeralConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanNumeralConverterTests.swift; sourceTree = "<group>"; };
+		0F166C861C85442E00F86CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,14 +61,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F166C2D1C84D89100F86CD8 /* Frameworks */ = {
+		0F166C711C85066200F86CD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F166C381C84D89100F86CD8 /* Frameworks */ = {
+		0F166C7F1C85442E00F86CD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,9 +81,9 @@
 		0F166C131C84D89100F86CD8 = {
 			isa = PBXGroup;
 			children = (
-				0F166C1E1C84D89100F86CD8 /* Roman Numeral Converter */,
-				0F166C331C84D89100F86CD8 /* Roman Numeral ConverterTests */,
-				0F166C3E1C84D89100F86CD8 /* Roman Numeral ConverterUITests */,
+				0F166C1E1C84D89100F86CD8 /* RomanNumeralConverter */,
+				0F166C751C85066200F86CD8 /* RomanNumeralConverterUITests */,
+				0F166C831C85442E00F86CD8 /* RomanNumeralConverterTests */,
 				0F166C1D1C84D89100F86CD8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,14 +91,14 @@
 		0F166C1D1C84D89100F86CD8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0F166C1C1C84D89100F86CD8 /* Roman Numeral Converter.app */,
-				0F166C301C84D89100F86CD8 /* Roman Numeral ConverterTests.xctest */,
-				0F166C3B1C84D89100F86CD8 /* Roman Numeral ConverterUITests.xctest */,
+				0F166C1C1C84D89100F86CD8 /* RomanNumeralConverter.app */,
+				0F166C741C85066200F86CD8 /* RomanNumeralConverterUITests.xctest */,
+				0F166C821C85442E00F86CD8 /* RomanNumeralConverterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0F166C1E1C84D89100F86CD8 /* Roman Numeral Converter */ = {
+		0F166C1E1C84D89100F86CD8 /* RomanNumeralConverter */ = {
 			isa = PBXGroup;
 			children = (
 				0F166C1F1C84D89100F86CD8 /* AppDelegate.swift */,
@@ -110,33 +110,34 @@
 				0F166C2B1C84D89100F86CD8 /* Info.plist */,
 				0F166C4D1C84DA1800F86CD8 /* .travis.yml */,
 			);
+			name = RomanNumeralConverter;
 			path = "Roman Numeral Converter";
 			sourceTree = "<group>";
 		};
-		0F166C331C84D89100F86CD8 /* Roman Numeral ConverterTests */ = {
+		0F166C751C85066200F86CD8 /* RomanNumeralConverterUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0F166C341C84D89100F86CD8 /* Roman_Numeral_ConverterTests.swift */,
-				0F166C361C84D89100F86CD8 /* Info.plist */,
+				0F166C761C85066200F86CD8 /* RomanNumeralConverterUITests.swift */,
+				0F166C781C85066200F86CD8 /* Info.plist */,
 			);
-			path = "Roman Numeral ConverterTests";
+			path = RomanNumeralConverterUITests;
 			sourceTree = "<group>";
 		};
-		0F166C3E1C84D89100F86CD8 /* Roman Numeral ConverterUITests */ = {
+		0F166C831C85442E00F86CD8 /* RomanNumeralConverterTests */ = {
 			isa = PBXGroup;
 			children = (
-				0F166C3F1C84D89100F86CD8 /* Roman_Numeral_ConverterUITests.swift */,
-				0F166C411C84D89100F86CD8 /* Info.plist */,
+				0F166C841C85442E00F86CD8 /* RomanNumeralConverterTests.swift */,
+				0F166C861C85442E00F86CD8 /* Info.plist */,
 			);
-			path = "Roman Numeral ConverterUITests";
+			path = RomanNumeralConverterTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0F166C1B1C84D89100F86CD8 /* Roman Numeral Converter */ = {
+		0F166C1B1C84D89100F86CD8 /* RomanNumeralConverter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F166C441C84D89100F86CD8 /* Build configuration list for PBXNativeTarget "Roman Numeral Converter" */;
+			buildConfigurationList = 0F166C441C84D89100F86CD8 /* Build configuration list for PBXNativeTarget "RomanNumeralConverter" */;
 			buildPhases = (
 				0F166C181C84D89100F86CD8 /* Sources */,
 				0F166C191C84D89100F86CD8 /* Frameworks */,
@@ -146,46 +147,46 @@
 			);
 			dependencies = (
 			);
-			name = "Roman Numeral Converter";
+			name = RomanNumeralConverter;
 			productName = "Roman Numeral Converter";
-			productReference = 0F166C1C1C84D89100F86CD8 /* Roman Numeral Converter.app */;
+			productReference = 0F166C1C1C84D89100F86CD8 /* RomanNumeralConverter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0F166C2F1C84D89100F86CD8 /* Roman Numeral ConverterTests */ = {
+		0F166C731C85066200F86CD8 /* RomanNumeralConverterUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F166C471C84D89100F86CD8 /* Build configuration list for PBXNativeTarget "Roman Numeral ConverterTests" */;
+			buildConfigurationList = 0F166C7B1C85066200F86CD8 /* Build configuration list for PBXNativeTarget "RomanNumeralConverterUITests" */;
 			buildPhases = (
-				0F166C2C1C84D89100F86CD8 /* Sources */,
-				0F166C2D1C84D89100F86CD8 /* Frameworks */,
-				0F166C2E1C84D89100F86CD8 /* Resources */,
+				0F166C701C85066200F86CD8 /* Sources */,
+				0F166C711C85066200F86CD8 /* Frameworks */,
+				0F166C721C85066200F86CD8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0F166C321C84D89100F86CD8 /* PBXTargetDependency */,
+				0F166C7A1C85066200F86CD8 /* PBXTargetDependency */,
 			);
-			name = "Roman Numeral ConverterTests";
-			productName = "Roman Numeral ConverterTests";
-			productReference = 0F166C301C84D89100F86CD8 /* Roman Numeral ConverterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0F166C3A1C84D89100F86CD8 /* Roman Numeral ConverterUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0F166C4A1C84D89100F86CD8 /* Build configuration list for PBXNativeTarget "Roman Numeral ConverterUITests" */;
-			buildPhases = (
-				0F166C371C84D89100F86CD8 /* Sources */,
-				0F166C381C84D89100F86CD8 /* Frameworks */,
-				0F166C391C84D89100F86CD8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0F166C3D1C84D89100F86CD8 /* PBXTargetDependency */,
-			);
-			name = "Roman Numeral ConverterUITests";
-			productName = "Roman Numeral ConverterUITests";
-			productReference = 0F166C3B1C84D89100F86CD8 /* Roman Numeral ConverterUITests.xctest */;
+			name = RomanNumeralConverterUITests;
+			productName = RomanNumeralConverterUITests;
+			productReference = 0F166C741C85066200F86CD8 /* RomanNumeralConverterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		0F166C811C85442E00F86CD8 /* RomanNumeralConverterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F166C891C85442E00F86CD8 /* Build configuration list for PBXNativeTarget "RomanNumeralConverterTests" */;
+			buildPhases = (
+				0F166C7E1C85442E00F86CD8 /* Sources */,
+				0F166C7F1C85442E00F86CD8 /* Frameworks */,
+				0F166C801C85442E00F86CD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F166C881C85442E00F86CD8 /* PBXTargetDependency */,
+			);
+			name = RomanNumeralConverterTests;
+			productName = RomanNumeralConverterTests;
+			productReference = 0F166C821C85442E00F86CD8 /* RomanNumeralConverterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -200,17 +201,17 @@
 					0F166C1B1C84D89100F86CD8 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
-					0F166C2F1C84D89100F86CD8 = {
+					0F166C731C85066200F86CD8 = {
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = 0F166C1B1C84D89100F86CD8;
 					};
-					0F166C3A1C84D89100F86CD8 = {
+					0F166C811C85442E00F86CD8 = {
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = 0F166C1B1C84D89100F86CD8;
 					};
 				};
 			};
-			buildConfigurationList = 0F166C171C84D89100F86CD8 /* Build configuration list for PBXProject "Roman Numeral Converter" */;
+			buildConfigurationList = 0F166C171C84D89100F86CD8 /* Build configuration list for PBXProject "RomanNumeralConverter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -223,9 +224,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0F166C1B1C84D89100F86CD8 /* Roman Numeral Converter */,
-				0F166C2F1C84D89100F86CD8 /* Roman Numeral ConverterTests */,
-				0F166C3A1C84D89100F86CD8 /* Roman Numeral ConverterUITests */,
+				0F166C1B1C84D89100F86CD8 /* RomanNumeralConverter */,
+				0F166C731C85066200F86CD8 /* RomanNumeralConverterUITests */,
+				0F166C811C85442E00F86CD8 /* RomanNumeralConverterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,14 +243,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F166C2E1C84D89100F86CD8 /* Resources */ = {
+		0F166C721C85066200F86CD8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F166C391C84D89100F86CD8 /* Resources */ = {
+		0F166C801C85442E00F86CD8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,34 +270,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F166C2C1C84D89100F86CD8 /* Sources */ = {
+		0F166C701C85066200F86CD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F166C351C84D89100F86CD8 /* Roman_Numeral_ConverterTests.swift in Sources */,
+				0F166C771C85066200F86CD8 /* RomanNumeralConverterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F166C371C84D89100F86CD8 /* Sources */ = {
+		0F166C7E1C85442E00F86CD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F166C401C84D89100F86CD8 /* Roman_Numeral_ConverterUITests.swift in Sources */,
+				0F166C851C85442E00F86CD8 /* RomanNumeralConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0F166C321C84D89100F86CD8 /* PBXTargetDependency */ = {
+		0F166C7A1C85066200F86CD8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0F166C1B1C84D89100F86CD8 /* Roman Numeral Converter */;
-			targetProxy = 0F166C311C84D89100F86CD8 /* PBXContainerItemProxy */;
+			target = 0F166C1B1C84D89100F86CD8 /* RomanNumeralConverter */;
+			targetProxy = 0F166C791C85066200F86CD8 /* PBXContainerItemProxy */;
 		};
-		0F166C3D1C84D89100F86CD8 /* PBXTargetDependency */ = {
+		0F166C881C85442E00F86CD8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0F166C1B1C84D89100F86CD8 /* Roman Numeral Converter */;
-			targetProxy = 0F166C3C1C84D89100F86CD8 /* PBXContainerItemProxy */;
+			target = 0F166C1B1C84D89100F86CD8 /* RomanNumeralConverter */;
+			targetProxy = 0F166C871C85442E00F86CD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -410,7 +411,7 @@
 				INFOPLIST_FILE = "Roman Numeral Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chrismcmeeking.Roman-Numeral-Converter";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RomanNumeralConverter;
 			};
 			name = Debug;
 		};
@@ -421,62 +422,62 @@
 				INFOPLIST_FILE = "Roman Numeral Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chrismcmeeking.Roman-Numeral-Converter";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RomanNumeralConverter;
 			};
 			name = Release;
 		};
-		0F166C481C84D89100F86CD8 /* Debug */ = {
+		0F166C7C1C85066200F86CD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Roman Numeral ConverterTests/Info.plist";
+				INFOPLIST_FILE = RomanNumeralConverterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrismcmeeking.Roman-Numeral-ConverterTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrismcmeeking.RomanNumeralConverterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roman Numeral Converter.app/Roman Numeral Converter";
-			};
-			name = Debug;
-		};
-		0F166C491C84D89100F86CD8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Roman Numeral ConverterTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrismcmeeking.Roman-Numeral-ConverterTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roman Numeral Converter.app/Roman Numeral Converter";
-			};
-			name = Release;
-		};
-		0F166C4B1C84D89100F86CD8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Roman Numeral ConverterUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrismcmeeking.Roman-Numeral-ConverterUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Roman Numeral Converter";
+				TEST_TARGET_NAME = RomanNumeralConverter;
 				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
 		};
-		0F166C4C1C84D89100F86CD8 /* Release */ = {
+		0F166C7D1C85066200F86CD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "Roman Numeral ConverterUITests/Info.plist";
+				INFOPLIST_FILE = RomanNumeralConverterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chrismcmeeking.Roman-Numeral-ConverterUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrismcmeeking.RomanNumeralConverterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Roman Numeral Converter";
+				TEST_TARGET_NAME = RomanNumeralConverter;
 				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		0F166C8A1C85442E00F86CD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RomanNumeralConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrismcmeeking.RomanNumeralConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RomanNumeralConverter.app/RomanNumeralConverter";
+			};
+			name = Debug;
+		};
+		0F166C8B1C85442E00F86CD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RomanNumeralConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chrismcmeeking.RomanNumeralConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RomanNumeralConverter.app/RomanNumeralConverter";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0F166C171C84D89100F86CD8 /* Build configuration list for PBXProject "Roman Numeral Converter" */ = {
+		0F166C171C84D89100F86CD8 /* Build configuration list for PBXProject "RomanNumeralConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F166C421C84D89100F86CD8 /* Debug */,
@@ -485,7 +486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F166C441C84D89100F86CD8 /* Build configuration list for PBXNativeTarget "Roman Numeral Converter" */ = {
+		0F166C441C84D89100F86CD8 /* Build configuration list for PBXNativeTarget "RomanNumeralConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F166C451C84D89100F86CD8 /* Debug */,
@@ -493,19 +494,19 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		0F166C471C84D89100F86CD8 /* Build configuration list for PBXNativeTarget "Roman Numeral ConverterTests" */ = {
+		0F166C7B1C85066200F86CD8 /* Build configuration list for PBXNativeTarget "RomanNumeralConverterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F166C481C84D89100F86CD8 /* Debug */,
-				0F166C491C84D89100F86CD8 /* Release */,
+				0F166C7C1C85066200F86CD8 /* Debug */,
+				0F166C7D1C85066200F86CD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		0F166C4A1C84D89100F86CD8 /* Build configuration list for PBXNativeTarget "Roman Numeral ConverterUITests" */ = {
+		0F166C891C85442E00F86CD8 /* Build configuration list for PBXNativeTarget "RomanNumeralConverterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F166C4B1C84D89100F86CD8 /* Debug */,
-				0F166C4C1C84D89100F86CD8 /* Release */,
+				0F166C8A1C85442E00F86CD8 /* Debug */,
+				0F166C8B1C85442E00F86CD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

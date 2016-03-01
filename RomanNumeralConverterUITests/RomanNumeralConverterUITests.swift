@@ -1,6 +1,6 @@
 //
-//  Roman_Numeral_ConverterUITests.swift
-//  Roman Numeral ConverterUITests
+//  RomanNumeralConverterUITests.swift
+//  RomanNumeralConverterUITests
 //
 //  Created by Chris McMeeking on 2/29/16.
 //  Copyright © 2016 Chris McMeeking. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Roman_Numeral_ConverterUITests: XCTestCase {
+class RomanNumeralConverterUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
