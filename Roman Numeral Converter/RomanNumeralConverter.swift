@@ -13,6 +13,8 @@ public class RomanNumeralConverter {
     //We use a singleton pattern to easily reset state if something gets corrupted.
     private static var instance = RomanNumeralConverter()
     
+    //By including IV, IX, XL,... in the symbol table, we trivialize some of the more
+    //complicated roman numeral requirements.
     private var _symbolDictionary = [
         1: "I",
         4: "IV",

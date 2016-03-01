@@ -35,11 +35,13 @@ class RomanNumeralConverterTests: XCTestCase {
         50: "L",
         99: "XCIX",
         100: "C",
+        400: "CD",
         500:"D",
         533:"DXXXIII",
         534:"DXXXIV",
         890: "DCCCXC",
         900:"CM",
+        1000: "M",
         1800: "MDCCC"
     ]
     
@@ -65,8 +67,10 @@ class RomanNumeralConverterTests: XCTestCase {
         thereAndBackAgain(_correctDictionary[10]!, value: 10)
         thereAndBackAgain(_correctDictionary[9]!, value: 9)
         thereAndBackAgain(_correctDictionary[50]!, value: 50)
+        thereAndBackAgain(_correctDictionary[400]!, value: 400)
         thereAndBackAgain(_correctDictionary[500]!, value: 500)
         thereAndBackAgain(_correctDictionary[900]!, value: 900)
+        thereAndBackAgain(_correctDictionary[1000]!, value: 1000)
     }
     
     func getIntegerFromNumeralIgnoreThrow(value: String) -> Int {
