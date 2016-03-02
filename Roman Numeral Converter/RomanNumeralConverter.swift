@@ -32,7 +32,7 @@ public class RomanNumeralConverter {
     ]
     
     //Given the specs criteria the maximum Roman Numeral is:
-    private static let MAX_ROMAN_NUMERAL = 3888
+    private let MAX_ROMAN_NUMERAL = 3888
     
     private var _sortedBaseValues:[Int]
     
@@ -56,37 +56,17 @@ public class RomanNumeralConverter {
         case InvalidRomanNumeral
         case ValueTooLarge
         case NonZeroOrNegative
+        case Unknown
     }
     
     public class func integerFromRomanNumeral (romanNumeral: String) throws -> Int {
         
         //By uppercasing the string here, our objects don't have to care!
-        let result = instance.getIntegerValue(romanNumeral.uppercaseString)
-        
-        //Super hacky error handling.  My solution for repeating symbols being adding extra
-        //symbols to the table ("IV", XC" etc) makes error handling tricker.  So instead, I just
-        //check the reverse process, and make sure that the result is the same as the value input.
-        //This may actually be fairly performant given how fast my iterative algorithm is for
-        //calculating proper roman numerals.
-        let correctRomanNumeral = instance.getRomanNumeral(result)
-        
-        if (correctRomanNumeral.compare(romanNumeral) == NSComparisonResult.OrderedSame) {
-            return result
-        } else {
-            throw RomanNumeralError.InvalidRomanNumeral
-        }
+        return try instance.getIntegerValue(romanNumeral.uppercaseString)
     }
     
     public class func romanNumeralFromInteger (value: Int) throws -> String {
-        if (value < 1) {
-            throw RomanNumeralError.NonZeroOrNegative
-        }
-        
-        if (value > MAX_ROMAN_NUMERAL) {
-            throw RomanNumeralError.ValueTooLarge
-        }
-        
-        return instance.getRomanNumeral(value)
+        return try instance.getRomanNumeral(value)
     }
     
     class func resetCache() {
@@ -110,7 +90,15 @@ public class RomanNumeralConverter {
     }
     
     
-    private func getRomanNumeral(value: Int) -> String {
+    private func getRomanNumeral(value: Int) throws -> String {
+        
+        if (value < 1) {
+            throw RomanNumeralError.NonZeroOrNegative
+        }
+        
+        if (value > MAX_ROMAN_NUMERAL) {
+            throw RomanNumeralError.ValueTooLarge
+        }
         
         var result = ""
         
@@ -138,7 +126,28 @@ public class RomanNumeralConverter {
         return result;
     }
     
-    private func getIntegerValue(romanNumeral: String) -> Int {
+    private func getIntegerValue(romanNumeral: String) throws -> Int {
+        
+        var result = 0;
+
+        result = try getIntegerValueRecursive(romanNumeral)
+        
+        //Super hacky error handling.  My solution for repeating symbols being adding extra
+        //symbols to the table ("IV", XC" etc) makes error handling tricker.  So instead, I just
+        //check the reverse process, and make sure that the result is the same as the value input.
+        //This may actually be fairly performant given how fast my iterative algorithm is for
+        //calculating proper roman numerals.
+        let correctRomanNumeral = try getRomanNumeral(result)
+        
+        if (correctRomanNumeral.compare(romanNumeral) == NSComparisonResult.OrderedSame) {
+            return result
+        } else {
+            throw RomanNumeralError.InvalidRomanNumeral
+        }
+        
+        
+    }
+    private func getIntegerValueRecursive(romanNumeral: String) throws -> Int {
         if (isRomanNumeralInTable(romanNumeral)) {
             let keys = (_symbolDictionary as NSDictionary).allKeysForObject(romanNumeral) as! [Int]
             return keys[0];
@@ -149,14 +158,14 @@ public class RomanNumeralConverter {
                 let restOfRomanNumeral = romanNumeral.substringFromIndex(symbol.endIndex)
                 
                 
-                let symbolValue = getIntegerValue(symbol)
-                let theRestValue = getIntegerValue(restOfRomanNumeral)
+                let symbolValue = try getIntegerValueRecursive(symbol)
+                let theRestValue = try getIntegerValueRecursive(restOfRomanNumeral)
                 
                 return theRestValue + symbolValue;
             }
         }
         
-        return 0;
+        throw RomanNumeralError.Unknown
     }
     
     private func isRomanNumeralInTable(romanNumeral: String) -> Bool {
