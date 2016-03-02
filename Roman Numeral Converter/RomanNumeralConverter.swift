@@ -32,15 +32,14 @@ public class RomanNumeralConverter {
     ]
     
     //Given the specs criteria the maximum Roman Numeral is:
-    private let MAX_ROMAN_NUMERAL = 3888
+    private static let MAX_ROMAN_NUMERAL = 3888
+    private static let MAX_REPEATS = 3
     
     private var _sortedBaseValues:[Int]
     
     private var _sortedBaseSymbols:[String]
     
     private let _repeatableSymbols = ["I", "X", "C", "M"]
-    
-    private let MAX_REPEATS = 3
     
     private init() {
         _sortedBaseValues = _symbolDictionary.keys.sort()
@@ -96,7 +95,7 @@ public class RomanNumeralConverter {
             throw RomanNumeralError.NonZeroOrNegative
         }
         
-        if (value > MAX_ROMAN_NUMERAL) {
+        if (value > RomanNumeralConverter.MAX_ROMAN_NUMERAL) {
             throw RomanNumeralError.ValueTooLarge
         }
         
@@ -109,7 +108,7 @@ public class RomanNumeralConverter {
                 let symbol = _symbolDictionary[key]!
 
                 if (_repeatableSymbols.contains(symbol)) {
-                    for _ in 1...MAX_REPEATS {
+                    for _ in 1...RomanNumeralConverter.MAX_REPEATS {
                         if (key <= remainingValue) {
                             result += symbol
                             remainingValue -= key
